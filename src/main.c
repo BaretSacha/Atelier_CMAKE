@@ -30,6 +30,8 @@ int main(int argc, char *argv[]){
 	}
 	else {printf("Erreur de parametres");}
 	return 0;
+
+		/* Commentaire test*/
 }
 
 		
