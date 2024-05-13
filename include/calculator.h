@@ -1,11 +1,10 @@
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
+
 double _add(double a, double b);
 double _sub(double a, double b);
 double _mul(double a, double b);
 double _div(double a, double b);
-
-#ifndef CALCULATOR_H
-#define CALCULATOR_H
-
-int square(int num);
+double square(double num); // Changement du type de retour en double
 
 #endif /* CALCULATOR_H */
