@@ -16,6 +16,6 @@ double _div(double a, double b) {
     return a / b;
 }
 
-double square(double num) {
+double car(double num) {
     return num * num;
 }

@@ -23,8 +23,8 @@ int main(int argc, char *argv[]) {
         } else if (strcmp(op, "div") == 0) {
             r = _div(atof(a), atof(b));
             printf("%lf", r);
-        } else if (strcmp(op, "square") == 0) { // Ajout de la condition pour le calcul du carré
-            r = square(atof(a)); // Appel de la fonction de calcul du carré
+        } else if (strcmp(op, "car") == 0) { // Ajout de la condition pour le calcul du carré
+            r = car(atof(a)); // Appel de la fonction de calcul du carré
             printf("%lf", r);
         } else {
             printf("Erreur de parametres");
