@@ -16,6 +16,6 @@ double _div(double a, double b) {
     return a / b;
 }
 
-double square(double num) { // Changement du type de retour en double
+double square(double num) {
     return num * num;
 }
