@@ -23,7 +23,12 @@ jobs:
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           cd ./$last_directory/build
-          ./src/calculator add 10 5
+          if [ -d "$last_directory/build" ]; then
+            ./src/calculator add 10 5
+          else
+            echo "Directory $last_directory/build does not exist."
+            exit 1
+          fi
 
   Test_Sub:
     runs-on: ubuntu-latest
@@ -33,7 +38,12 @@ jobs:
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           cd ./$last_directory/build
-          ./src/calculator sub 10 5
+          if [ -d "$last_directory/build" ]; then
+            ./src/calculator sub 10 5
+          else
+            echo "Directory $last_directory/build does not exist."
+            exit 1
+          fi
 
   Test_Mul:
     runs-on: ubuntu-latest
@@ -43,7 +53,12 @@ jobs:
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           cd ./$last_directory/build
-          ./src/calculator mul 10 5
+          if [ -d "$last_directory/build" ]; then
+            ./src/calculator mul 10 5
+          else
+            echo "Directory $last_directory/build does not exist."
+            exit 1
+          fi
 
   Test_Div:
     runs-on: ubuntu-latest
@@ -53,7 +68,12 @@ jobs:
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           cd ./$last_directory/build
-          ./src/calculator div 10 5
+          if [ -d "$last_directory/build" ]; then
+            ./src/calculator div 10 5
+          else
+            echo "Directory $last_directory/build does not exist."
+            exit 1
+          fi
 
   Test_Square:
     runs-on: ubuntu-latest
@@ -63,4 +83,9 @@ jobs:
         run: |
           last_directory=$(basename ${{ runner.workspace }})
           cd ./$last_directory/build
-          ./src/calculator car 5
+          if [ -d "$last_directory/build" ]; then
+            ./src/calculator car 5
+          else
+            echo "Directory $last_directory/build does not exist."
+            exit 1
+          fi
