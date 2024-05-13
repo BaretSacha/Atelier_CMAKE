@@ -15,77 +15,18 @@ jobs:
           make
           make test
 
-  Test_Add:
+    Test_Add:
     runs-on: ubuntu-latest
     needs: Compilation
     steps:
       - name: Test fonction add
         run: |
           last_directory=$(basename ${{ runner.workspace }})
-          cd ./$last_directory/build
-          if [ -d "$last_directory/build" ]; then
-            ./src/calculator add 10 5
-          else
-            echo "Directory $last_directory/build does not exist."
-            exit 1
-          fi
+          git clone https://github.com/${{ github.repository }}.git
+          cd ./$last_directory
+          mkdir build
+          cd build
+          cmake ..
+          make
+          ./src/calculator add 10 5
 
-  Test_Sub:
-    runs-on: ubuntu-latest
-    needs: Compilation
-    steps:
-      - name: Test fonction sub
-        run: |
-          last_directory=$(basename ${{ runner.workspace }})
-          cd ./$last_directory/build
-          if [ -d "$last_directory/build" ]; then
-            ./src/calculator sub 10 5
-          else
-            echo "Directory $last_directory/build does not exist."
-            exit 1
-          fi
-
-  Test_Mul:
-    runs-on: ubuntu-latest
-    needs: Compilation
-    steps:
-      - name: Test fonction mul
-        run: |
-          last_directory=$(basename ${{ runner.workspace }})
-          cd ./$last_directory/build
-          if [ -d "$last_directory/build" ]; then
-            ./src/calculator mul 10 5
-          else
-            echo "Directory $last_directory/build does not exist."
-            exit 1
-          fi
-
-  Test_Div:
-    runs-on: ubuntu-latest
-    needs: Compilation
-    steps:
-      - name: Test fonction div
-        run: |
-          last_directory=$(basename ${{ runner.workspace }})
-          cd ./$last_directory/build
-          if [ -d "$last_directory/build" ]; then
-            ./src/calculator div 10 5
-          else
-            echo "Directory $last_directory/build does not exist."
-            exit 1
-          fi
-
-  Test_Square:
-    runs-on: ubuntu-latest
-    needs: Compilation
-    steps:
-      - name: Test fonction square
-        run: |
-          last_directory=$(basename ${{ runner.workspace }})
-          cd ./$last_directory/build
-          if [ -d "$last_directory/build" ]; then
-            ./src/calculator car 5
-          else
-            echo "Directory $last_directory/build does not exist."
-            exit 1
-          fi
